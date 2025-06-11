@@ -1,8 +1,11 @@
+import logging
 from datetime import timedelta
 from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, CoordinatorEntity
 from .api_client import GoGreenEnergyApiClient
 from .const import DEFAULT_PRODUCT_KEY, DEFAULT_OPTIONS
+
+_LOGGER = logging.getLogger(__name__)
 
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     api_client = GoGreenEnergyApiClient()
@@ -12,6 +15,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
 
     coordinator = DataUpdateCoordinator(
         hass,
+        _LOGGER,  # Pass the logger here
         name="GoGreenEnergy Price",
         update_method=async_update_data,
         update_interval=timedelta(hours=1),  # Update every hour
