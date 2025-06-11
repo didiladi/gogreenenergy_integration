@@ -1,0 +1,14 @@
+{
+  "domain": "gogreenenergy",
+  "name": "GoGreenEnergy Integration",
+  "version": "1.0.0",
+  "documentation": "https://github.com/didiladi/gogreenenergy_integration",
+  "requirements": [
+    "requests"
+  ],
+  "dependencies": [],
+  "codeowners": [
+    "@didiladi"
+  ],
+  "iot_class": "cloud_polling"
+}
