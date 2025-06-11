@@ -1,10 +1,11 @@
 {
   "domain": "gogreenenergy",
-  "name": "GoGreenEnergy Integration",
-  "version": "1.0.0",
+  "name": "GoGreenEnergy Price Sensor",
+  "version": "0.1.0",
   "documentation": "https://github.com/didiladi/gogreenenergy_integration",
   "requirements": [
-    "requests"
+    "aiohttp",
+    "beautifulsoup4"
   ],
   "dependencies": [],
   "codeowners": [
