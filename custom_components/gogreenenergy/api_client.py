@@ -1,9 +1,10 @@
 import aiohttp
+from .const import DEFAULT_VAT
 
 class GoGreenEnergyApiClient:
     URL = "https://www.gogreenenergy.at/.rest/calculator/v1/products?includeHistory=true&products=GSFLEX,GGFLEX"
 
-    async def fetch_price_data(self, product_key="GSFLEX", options=("plus",), vat=0.2):
+    async def fetch_price_data(self, product_key="GSFLEX", options=("plus",), vat=DEFAULT_VAT):
         async with aiohttp.ClientSession() as session:
             async with session.get(self.URL) as resp:
                 data = await resp.json()

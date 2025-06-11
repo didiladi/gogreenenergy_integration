@@ -2,12 +2,13 @@ from datetime import timedelta
 from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, CoordinatorEntity
 from .api_client import GoGreenEnergyApiClient
+from .const import DEFAULT_PRODUCT_KEY, DEFAULT_OPTIONS
 
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     api_client = GoGreenEnergyApiClient()
 
     async def async_update_data():
-        return await api_client.fetch_price_data(product_key="GSFLEX", options=("plus",))
+        return await api_client.fetch_price_data(product_key=DEFAULT_PRODUCT_KEY, options=DEFAULT_OPTIONS)
 
     coordinator = DataUpdateCoordinator(
         hass,

@@ -1,6 +1,4 @@
-API_URL = "https://api.gogreenenergy.com/v1/prices"
-SENSOR_TYPE = "price"
-CONF_API_KEY = "api_key"
-CONF_LOCATION = "location"
-DEFAULT_LOCATION = "default_location"
-UPDATE_INTERVAL = 60  # in seconds
+DOMAIN = "gogreenenergy"
+DEFAULT_PRODUCT_KEY = "GSFLEX"
+DEFAULT_OPTIONS = ("plus",)
+DEFAULT_VAT = 0.2  # 20% VAT
